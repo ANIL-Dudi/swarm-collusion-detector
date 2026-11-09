@@ -55,7 +55,7 @@ defences.
 7. **Content spoofing barely hurts** (1.00 at 90%), mostly because our
    spoofing adversary is weak.
 8. **Negative result:** on an alternative generator where collusion exists only
-   as shared topic vocabulary, all detectors are near chance (0.42-0.58). Our
+   as shared topic vocabulary, all detectors are near chance (0.39-0.58 across conditions). Our
    detector depends on graph and code-word structure.
 
 ![Tampering](results/fig1_tampering.png)
@@ -77,3 +77,4 @@ defences.
 - Worst-case search covers a coarse grid (stealth up to 0.8, deletion up to
   90%), not a proven bound.
 - Only one decoy-deletion strategy was tested.
+
