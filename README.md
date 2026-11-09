@@ -44,7 +44,14 @@ Outputs go to `results/`.
 4. **Content spoofing barely hurts** (AUROC 1.00 at 90% spoofed), because
    graph signals are untouched and a few surviving code words suffice. This
    mostly shows our spoofing adversary is weak.
-5. **Tamper-evident defence:** (fill in after running `gap_defence.py`)
+5. **Tamper-evident defence helps, but only with a trusted logger.** Per-agent
+   sequence numbers expose deletions: at 90% deletion, fused AUROC is 0.73 vs
+   0.12 for the combined detector alone. If the attacker can renumber its own
+   messages, the defence disappears (back to 0.12). Our simulated adversary
+   deletes only its own messages; decoy deletions of honest messages are
+   untested.
+6. **Results hold from 16 to 64 agents** (clean AUROC 1.00; 50% hidden
+   0.99-1.00; 50% deletion 0.72-0.77).
 
 ![Tampering](results/fig1_tampering.png)
 ![Adaptive adversary](results/fig2_adaptive_adversary.png)
@@ -57,3 +64,4 @@ Outputs go to `results/`.
 - Colluders follow a fixed strategy and do not learn against the detector.
 - Small population (16 agents); behavior at swarm scale is untested.
 - The gap defence assumes sequence numbers are written by a trusted logger.
+
